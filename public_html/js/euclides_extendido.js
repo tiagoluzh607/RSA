@@ -4,11 +4,6 @@
  * and open the template in the editor.
  */
 
-
-console.log("testes de log");
-var d = EuclidesExtendido(352,7);
-console.log(d);
-
 function EuclidesExtendido( qq, e){
     
     var s = 0; var s_anterior = 1;
