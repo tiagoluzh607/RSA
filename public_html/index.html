@@ -19,6 +19,7 @@
 
     <!-- Custom styles for this template -->
     <link href="css/one-page-wonder.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 
   </head>
 
@@ -27,17 +28,17 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="#">Start Bootstrap</a>
+        <a class="navbar-brand" href="#">Euclides Estendido</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="#">Sign Up</a>
+              <a class="nav-link js-scroll-trigger" href="#teste">Euclides Estendido</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Log In</a>
+              <a class="nav-link" href="#">Mensagem RSA</a>
             </li>
           </ul>
         </div>
@@ -47,9 +48,9 @@
     <header class="masthead text-center text-white">
       <div class="masthead-content">
         <div class="container">
-          <h1 class="masthead-heading mb-0">One Page Wonder</h1>
-          <h2 class="masthead-subheading mb-0">Will Rock Your Socks Off</h2>
-          <a href="#" class="btn btn-primary btn-xl rounded-pill mt-5">Learn More</a>
+          <h1 class="masthead-heading mb-0">Bem-vindo ao Sistema</h1>
+          <h2 class="masthead-subheading mb-0">Euclides Estendido</h2>
+          <a href="#" class="btn btn-primary btn-xl rounded-pill mt-5">Iniciar</a>
         </div>
       </div>
       <div class="bg-circle-1 bg-circle"></div>
@@ -58,7 +59,7 @@
       <div class="bg-circle-4 bg-circle"></div>
     </header>
 
-    <section>
+    <section id="teste">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-6 order-lg-2">
@@ -87,41 +88,67 @@
       </div>
     </section>
 
-    <section>
+    <section class="section_mensagens">
       <div class="container">
         <div class="row align-items-center">
-          <div class="col-lg-6">
-            <div class="p-5">
-              <img class="img-fluid rounded-circle" src="img/02.jpg" alt="">
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="p-5">
-              <h2 class="display-4">We salute you!</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.</p>
-            </div>
+          <div class="col-12 text-center">
+              <label>Mensagem</label>
+              <textarea></textarea>
+              
+              <div class="row">
+                  <div class="col-4"><button>Obter Chave</button></div>
+                  <div class="col-4">
+                      <form id="form_chave_publica">
+                          <label for="input_chave_publica_n">N: </label>
+                          <input id="input_chave_publica_n" name="input_chave_publica_n" value="437"/>
+                            <br>
+                          <label for="input_chave_publica_e">E: </label>
+                          <input id="input_chave_publica_e" name="input_chave_publica_e" value="13"/>
+                      </form>
+                  </div>
+                  <div class="col-4"><button>Enviar Chave</button></div>
+              </div>
+              
+              <div class="row">
+                  <div class="col-12"><button>Cifrar</button></div>
+              </div>
+              
+              <div class="row mensagem_cifrada">
+                  <div class="col-4"><button>Obter Mensagem</button></div>
+                  <div class="col-4 text-center">
+                      <label>Mensagem Cifrada</label>
+                      <textarea></textarea>
+                  </div>
+                  <div class="col-4"><button>Enviar Mensagem</button></div>
+              </div>
+              
+              <div class="row">
+                  <div class="col-12">
+                      <form id="form_chave_privada">
+                          <label for="input_chave_privada_n">N: </label>
+                          <input id="input_chave_privada_n" name="input_chave_privada_n" value="437"/>
+                          <br>
+                          <label for="input_chave_privada_d">D: </label>
+                          <input id="input_chave_privada_d" name="input_chave_privada_d" value="61"/>
+                      </form>
+                      
+                    <div class="col-12"><button>Decifrar</button></div>
+                    <label>Mensagem Decifrada</label>
+                    <textarea></textarea>
+                      
+                  </div>
+              </div>
+              
+              <div class="row">
+
+              </div>
+              
           </div>
         </div>
       </div>
     </section>
 
-    <section>
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-6 order-lg-2">
-            <div class="p-5">
-              <img class="img-fluid rounded-circle" src="img/03.jpg" alt="">
-            </div>
-          </div>
-          <div class="col-lg-6 order-lg-1">
-            <div class="p-5">
-              <h2 class="display-4">Let there be rock!</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+
 
     <!-- Footer -->
     <footer class="py-5 bg-black">
@@ -134,6 +161,7 @@
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
     
     <!-- Euclides Estendido-->
     <script type="text/javascript" src="js/euclides_extendido.js"></script>

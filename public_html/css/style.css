@@ -1,0 +1,23 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 04/05/2018, 20:46:05
+    Author     : tiago
+*/
+
+.section_mensagens textarea{
+    
+    width: 100%;
+    margin-bottom: 5ch;
+}
+
+.mensagem_cifrada{
+    margin-top: 5ch;
+}
+
+footer{
+    margin-top: 10%;
+}
