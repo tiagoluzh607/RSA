@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
   <head>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="RSA">
+    <meta name="author" content="TIago Luz">
 
-    <title>One Page Wonder - Start Bootstrap Template</title>
+    <title>RSA</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -106,7 +106,7 @@
                           <input id="input_chave_publica_e" name="input_chave_publica_e" value="13"/>
                       </form>
                   </div>
-                  <div class="col-4"><button>Enviar Chave</button></div>
+                  <div id="buttonEnviarChave" class="col-4"><button>Enviar Chave</button></div>
               </div>
               
               <div class="row">
@@ -165,7 +165,48 @@
     
     <!-- Euclides Estendido-->
     <script type="text/javascript" src="js/euclides_extendido.js"></script>
+    
+    <script type="text/javascript" src="js/Service/APIService.js"></script>
+  
+    
+    <!-- Controlador do html -->
     <script type="text/javascript" src="js/Controller/IndexController.js"></script>
+
+    <script>
+    
+    var botaoAdicionar = document.querySelector("#buttonEnviarChave");
+
+    botaoAdicionar.addEventListener("click", function() {
+        var xhr = new XMLHttpRequest();
+
+        xhr.open("GET", "http://webapi-tiagoluzh607665881.codeanyapp.com:8080/euclidesapi/chave");
+
+
+        xhr.addEventListener("load", function(){
+
+            var erroAjax = document.querySelector("#erro-ajax");
+
+            if (xhr.status == 200) {
+                erroAjax.classList.add("invisivel");
+                var resposta = xhr.responseText;
+                var pacientes = JSON.parse(resposta);
+
+                pacientes.forEach(function (paciente) {
+                    console.log(paciente);
+                });
+            } else {
+                //Codigo do Erro aqui
+                erroAjax.classList.remove("invisivel");
+            }
+
+        });
+
+        xhr.send();
+
+    });
+        
+        
+    </script>
 
   </body>
 

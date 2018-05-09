@@ -10,7 +10,6 @@ var form_euclides = document.querySelector("#form_euclides");
 var input_qq = form_euclides.input_qq;
 var input_e = form_euclides.input_e;
 var input_d = form_euclides.input_d;
-
     
 function ControllerCalculaD(){
   
