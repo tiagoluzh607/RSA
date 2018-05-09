@@ -96,7 +96,7 @@
               <textarea></textarea>
               
               <div class="row">
-                  <div class="col-4"><button>Obter Chave</button></div>
+                  <div id="buttonObterChave" class="col-4"><button>Obter Chave</button></div>
                   <div class="col-4">
                       <form id="form_chave_publica">
                           <label for="input_chave_publica_n">N: </label>
@@ -114,12 +114,12 @@
               </div>
               
               <div class="row mensagem_cifrada">
-                  <div class="col-4"><button>Obter Mensagem</button></div>
+                  <div id="buttonObterMensagem" class="col-4"><button>Obter Mensagem</button></div>
                   <div class="col-4 text-center">
                       <label>Mensagem Cifrada</label>
-                      <textarea></textarea>
+                      <textarea id="textareaMensagemCifrada"></textarea>
                   </div>
-                  <div class="col-4"><button>Enviar Mensagem</button></div>
+                  <div id="buttonEnviarMensagem" class="col-4"><button>Enviar Mensagem</button></div>
               </div>
               
               <div class="row">
@@ -166,47 +166,18 @@
     <!-- Euclides Estendido-->
     <script type="text/javascript" src="js/euclides_extendido.js"></script>
     
-    <script type="text/javascript" src="js/Service/APIService.js"></script>
+    
   
+    <!-- Models -->
+    <script type="text/javascript" src="js/Model/Chave.js"></script>
+    <script type="text/javascript" src="js/Model/ChavePrivada.js"></script>
+    <script type="text/javascript" src="js/Model/ChavePublica.js"></script>
+    
+    <script type="text/javascript" src="js/Service/APIService.js"></script>
     
     <!-- Controlador do html -->
     <script type="text/javascript" src="js/Controller/IndexController.js"></script>
 
-    <script>
-    
-    var botaoAdicionar = document.querySelector("#buttonEnviarChave");
-
-    botaoAdicionar.addEventListener("click", function() {
-        var xhr = new XMLHttpRequest();
-
-        xhr.open("GET", "http://webapi-tiagoluzh607665881.codeanyapp.com:8080/euclidesapi/chave");
-
-
-        xhr.addEventListener("load", function(){
-
-            var erroAjax = document.querySelector("#erro-ajax");
-
-            if (xhr.status == 200) {
-                erroAjax.classList.add("invisivel");
-                var resposta = xhr.responseText;
-                var pacientes = JSON.parse(resposta);
-
-                pacientes.forEach(function (paciente) {
-                    console.log(paciente);
-                });
-            } else {
-                //Codigo do Erro aqui
-                erroAjax.classList.remove("invisivel");
-            }
-
-        });
-
-        xhr.send();
-
-    });
-        
-        
-    </script>
 
   </body>
 
