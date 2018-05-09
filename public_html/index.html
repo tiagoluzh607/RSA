@@ -35,10 +35,13 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#teste">Euclides Estendido</a>
+              <a class="nav-link js-scroll-trigger" href="#section_chave_publica">Chave Publica</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Mensagem RSA</a>
+              <a class="nav-link" href="#section_chave_privada">Chave Privada</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#section_mensagens">Mensagens</a>
             </li>
           </ul>
         </div>
@@ -59,9 +62,47 @@
       <div class="bg-circle-4 bg-circle"></div>
     </header>
 
-    <section id="teste">
+    <section id="section_chave_publica">
       <div class="container">
         <div class="row align-items-center">
+          <div class="col-lg-12 text-center">
+            <h2 class="my-4">Chave Publica</h2>
+          </div>
+          <div class="col-lg-6 order-lg-2">
+            <div class="p-5">
+              <img class="img-fluid rounded-circle" src="img/01.jpg" alt="">
+            </div>
+          </div>
+          <div class="col-lg-6 order-lg-1">
+            <form id="form_calcula_chave_publica">
+                <label>
+                    p
+                    <input name="input_p" type="number">
+                </label>
+                <label>
+                    q
+                    <input name="input_q" type="number">
+                </label>
+                <label>
+                    e
+                    <input name="input_e" type="number">
+                </label>
+            </form>
+            <button onclick="ControllerCalculaChavePublica();">Calcular Chave Publica</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+    
+    
+    <section id="section_chave_privada">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-12 text-center">
+            <h2 class="my-4">Chave Privada</h2>
+          </div>
           <div class="col-lg-6 order-lg-2">
             <div class="p-5">
               <img class="img-fluid rounded-circle" src="img/01.jpg" alt="">
@@ -88,9 +129,12 @@
       </div>
     </section>
 
-    <section class="section_mensagens">
+    <section id="section_mensagens" class="section_mensagens">
       <div class="container">
         <div class="row align-items-center">
+          <div class="col-lg-12 text-center">
+            <h2 class="my-4">Mensagens</h2>
+          </div>
           <div class="col-12 text-center">
               <label>Mensagem</label>
               <textarea></textarea>
