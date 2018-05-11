@@ -7,6 +7,18 @@ and open the template in the editor.
     Created on : 04/05/2018, 20:46:05
     Author     : tiago
 */
+.position-relative{
+    position: relative;
+}
+
+.position-absolute{
+    position: absolute;
+}
+
+.center{
+    margin: auto;
+}
+
 
 .section_mensagens textarea{
     
@@ -20,4 +32,99 @@ and open the template in the editor.
 
 footer{
     margin-top: 10%;
+}
+
+
+/*##### Botoẽs e Formulários ############*/
+
+.form-group input, .form-group textarea{
+    padding: 15px;
+}
+
+.form-control:focus {
+    border-color: #ee0979;
+    box-shadow: none;
+    border-width: 1px;
+}
+
+.form-control::selection {
+  background-color: #ee0979;
+  color: white;
+}
+
+.form-control::-webkit-input-placeholder {
+  font-weight: 700;
+  color: #ced4da;
+  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+
+.btn.disabled, .btn:disabled {
+    opacity: .65;
+}
+
+
+.btn-default {
+    font-family: Cabin,'Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    text-transform: uppercase;
+    border-radius: 0;
+    
+    color: #ee0979;
+    border: 1px solid #ee0979;
+    background-color: transparent;
+}
+
+.btn-default:focus,.btn-default:hover{
+    color:white;
+    border:1px solid #ee0979;
+    outline:0;
+    background-color:#ee0979;
+}
+
+
+.painel {
+    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    
+    color: white;
+    background-color: #00000047;
+    border-color: #000000;
+    border-width: 2px;
+    
+}
+
+.painel_pink {
+    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    
+    color: black;
+    background-color: #ee097900;
+    border-color: #ee0979;
+    border-width: 2px;
+    
+}
+
+.painel_input{
+    font-weight: bold;
+    color: white;
+    
+    background-color: #00000000;
+    border-color: #00000000;
+    max-width: 50px;
+    
+}
+
+.painel_cadeado{
+    bottom: 0;
+    left: 0;
+    margin-left: 25%;
+    margin-bottom: 20%;
+    
+}
+
+.div_resposta{
+    font-weight: bold;
+    font-size: 100%;
 }
