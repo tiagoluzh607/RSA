@@ -83,7 +83,7 @@
                         E = <input class="painel_input" name="cadeado_e" value="13">
                     </div>
                 </form>
-            </div>
+              </div>
           </div>
           <div class="col-lg-6 order-lg-1">
             
@@ -151,26 +151,110 @@
           </div>
           
           <div class="col-lg-6 order-md-2">
-            <form id="form_euclides">
-                <label>
-                    qq
-                    <input name="input_qq" type="number">
-                </label>
-                <label>
-                    e
-                    <input name="input_e" type="number">
-                </label>
-                <label>
-                    d
-                    <input name="input_d" type="number">
-                </label>
+              
+            <form id="form_euclides" data-toggle="validator" name="sentMessage">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                      <label for="input_qq">QQ</label>
+                      <input class="form-control" id="input_qq" name="input_qq" type="number" placeholder="Digite o Valor de QQ *" required="required" data-error="Quase Conseguiu!! Precisa informar o Nome.">
+                    <div class="help-block with-errors"></div>
+                  </div>
+                  <div class="form-group">
+                      <label for="input_e">E</label>
+                      <input class="form-control" id="input_e" name="input_e" type="number" placeholder="Digite o Valor de E *" required="required" data-error="Bateu na Trave!! Precisa informar um endereço de Email válido.">
+                    <div class="help-block with-errors"></div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="input_d">D</label>
+                    <input class="form-control" id="input_d" name="input_d" type="number" placeholder="Valor de D *" required="required" data-error="Bateu na Trave!! Precisa informar um endereço de Email válido.">
+                    <div class="help-block with-errors"></div>
+                  </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="col-lg-12 text-center">
+                    <div id="success"></div>         
+                    <button type="button" onclick="ControllerCalculaD();" class="btn btn-default btn-lg">
+                        <i class="fa fa-key fa-fw"></i>
+                        <span class="network-name">Calcular Chave Privada</span>
+                    </button>     
+                </div>   
+              </div>
             </form>
-            <button onclick="ControllerCalculaD();">Calcular</button>
+              
           </div>
           <div class="col-lg-6 order-md-1">
-            <div class="p-5">
+              
+              <div class="p-5 position-relative">
+                
                 <img class="img-fluid" src="img/chave.png" alt="">
+                <form id="form_chave">
+                    <div class="painel painel_chave alert alert-dark position-absolute" role="alert">
+                        N = <input class="painel_input" name="chave_n" value="437"><br>
+                        D = <input class="painel_input" name="chave_d" value="61">
+                    </div>
+                </form>
+              </div>
+ 
+          </div>
+            <div class="col-lg-12 order-lg-3 text-center">
+                <h5>Algoritmo de Euclides Estendido</h5>
             </div>
+          <div class="col-lg-12 order-lg-3">
+              <table class="table">
+                  <thead>
+                      <tr>
+                          <th scope="col">interator</th>
+                          <th scope="col">Quociente</th>
+                          <th scope="col">Resto</th>
+                          <th scope="col">S</th>
+                          <th scope="col">T</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <th scope="row">1</th>
+                          <td></td>
+                          <td>396</td>
+                          <td>1</td>
+                          <td>0</td>
+                      </tr>
+                      <tr>
+                          <th scope="row">2</th>
+                          <td></td>
+                          <td>13</td>
+                          <td>0</td>
+                          <td>1</td>
+                      </tr>
+                      <tr>
+                          <th scope="row">3</th>
+                          <td>396/13 = 30</td>
+                          <td>396%13 = 6</td>
+                          <td>1 - 30 * 0 = 1</td>
+                          <td>0 - 30 * 1 = -30</td>
+                      </tr>
+                      <tr>
+                          <th scope="row">4</th>
+                          <td>13/6 = 2</td>
+                          <td>13%6 = 1</td>
+                          <td>0 - 2 * 1 = -2</td>
+                          <td>1 - 2 * -30 = 61</td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+          <div class="col-lg-12 order-lg-3 painel_provareal_d">
+              <div class="painel_pink alert alert-dark center" role="alert">
+                    <div class="row text-center">
+                        <div class="col-12"><h5>Condição do D no RSA</h5></div>
+                        <div class="col-12">(d * e) mod QQ = 1</div>
+                        <div class="col-12">(61 * 13) mod 396 = 1</div>
+                        <div class="col-12"><hr></div>
+                        <div class="col-12 div_resposta">D = 61</div>
+                    </div>
+              </div>
           </div>
         </div>
       </div>

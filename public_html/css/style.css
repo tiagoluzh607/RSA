@@ -19,6 +19,9 @@ and open the template in the editor.
     margin: auto;
 }
 
+section{
+    padding-top: 15ch;
+}
 
 .section_mensagens textarea{
     
@@ -124,7 +127,19 @@ footer{
     
 }
 
+.painel_chave{
+    bottom:  0;
+    left: 0;
+    margin-left: 15%;
+    margin-bottom:15%;
+    
+}
+
+.painel_provareal_d{
+    margin-top: 5ch;
+}
+
 .div_resposta{
     font-weight: bold;
-    font-size: 100%;
+    font-size: 120%;
 }
