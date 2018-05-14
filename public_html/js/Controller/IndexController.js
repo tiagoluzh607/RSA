@@ -2,7 +2,7 @@
  * 
  */
 
-
+/*
 var form_euclides = document.querySelector("#form_euclides");
 
 var input_qq = form_euclides.input_qq;
@@ -18,7 +18,81 @@ function ControllerCalculaD(){
     
     input_d.value = d;
 }
+*/
 
+
+//################ Sessão Chave Publica ###########################################################
+
+function AddPainelChavePublica(painel, conteudo1, conteudo2, conteudo3, ehresultado){
+    
+    var div1 = document.createElement("div");
+    var div2 = document.createElement("div");
+    var div3 = document.createElement("div");
+    
+    div1.textContent = conteudo1;
+    div2.textContent = conteudo2;
+    div3.textContent = conteudo3;
+    
+    div1.classList.add("col-4");
+    div2.classList.add("col-4");
+    div3.classList.add("col-4");
+    
+    if(ehresultado){
+        div1.classList.add("div_resposta");
+        div2.classList.add("div_resposta");
+        div3.classList.add("div_resposta");
+        
+        var hr = document.createElement("hr");
+        hr.classList.add("col-11");
+        painel.appendChild(hr);
+    }
+    
+    painel.appendChild(div1);
+    painel.appendChild(div2);
+    painel.appendChild(div3);
+    
+}
+
+function PreenchePainelChavePublica(painel,p,q,n,qq,e){
+    
+    var divisiveis = DivisiveisDeQQ(qq).toString();
+    
+    painel.textContent = ""; // Caso o Painel já esteja preenchido reseta o conteudo dele
+    
+    AddPainelChavePublica(painel, "N = p * q", "QQ = (p-1)*(q-1)", "e = não primo relativo a QQ",false);
+    AddPainelChavePublica(painel, n+" = "+p+" * "+q, qq+" = ("+(p-1)+")*("+(q-1)+")", "e = !("+divisiveis+")",false);
+    AddPainelChavePublica(painel, "N = "+n, "QQ = "+qq, "E = "+e,true);
+}
+
+function PreenchePainelCadeado(n,e){   
+    input_cadeado_n.value = n;
+    input_cadeado_e.value = e;
+}
+
+button_calcula_chave_publica.addEventListener("click", function() {
+    
+    var p = input_calcula_chave_publica_p.value;
+    var q = input_calcula_chave_publica_q.value;
+    var n = p * q;
+    var qq = (p-1)*(q-1);
+    var e = CalculaE(qq);
+    
+    
+    //gatilhos
+    PreenchePainelChavePublica(painel_chave_publica,p,q,n,qq,e);
+    PreenchePainelCadeado(n,e);
+    input_calcula_chave_publica_e.value = e;
+    input_calcula_chave_privada_e.value = e;
+    input_calcula_chave_privada_qq.value = qq;
+    input_chave_n.value = n;
+    input_cifra_mensagem_n.value = n;
+    input_cifra_mensagem_e.value = e;
+    input_decifra_mensagem_n.value = n;
+    
+});
+
+
+//################ Sessão Chave Privada ###########################################################
 
 
 
