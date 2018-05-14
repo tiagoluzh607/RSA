@@ -79,8 +79,8 @@
                 <img class="img-fluid" src="img/cadeado.png" alt="">
                 <form id="form_cadeado">
                     <div class="painel painel_cadeado alert alert-dark position-absolute" role="alert">
-                        N = <input class="painel_input" name="cadeado_n" value="437"><br>
-                        E = <input class="painel_input" name="cadeado_e" value="13">
+                        N = <input class="painel_input" name="input_cadeado_n" value="437"><br>
+                        E = <input class="painel_input" name="input_cadeado_n" value="13">
                     </div>
                 </form>
               </div>
@@ -91,24 +91,24 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                      <input class="form-control" id="input_p" name="input_p" type="number" placeholder="Digite o Valor de P *" required="required" data-error="Quase Conseguiu!! Precisa informar o Nome.">
+                      <input class="form-control" id="input_calcula_chave_publica_p" name="input_calcula_chave_publica_p" type="number" placeholder="Digite o Valor de P *" required="required" data-error="Quase Conseguiu!! Precisa informar o Nome.">
                     <div class="help-block with-errors"></div>
                   </div>
                   <div class="form-group">
-                      <input class="form-control" id="input_q" name="input_q" type="number" placeholder="Digite o Valor de Q *" required="required" data-error="Bateu na Trave!! Precisa informar um endereço de Email válido.">
+                      <input class="form-control" id="input_calcula_chave_publica_q" name="input_calcula_chave_publica_q" type="number" placeholder="Digite o Valor de Q *" required="required" data-error="Bateu na Trave!! Precisa informar um endereço de Email válido.">
                     <div class="help-block with-errors"></div>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input class="form-control" id="input_e" name="input_e" type="number" placeholder="Valor de E *" required="required" data-error="Bateu na Trave!! Precisa informar um endereço de Email válido.">
+                    <input class="form-control" id="input_calcula_chave_publica_e" name="input_calcula_chave_publica_e" type="number" placeholder="Valor de E *" required="required" data-error="Bateu na Trave!! Precisa informar um endereço de Email válido.">
                     <div class="help-block with-errors"></div>
                   </div>
                 </div>
                 <div class="clearfix"></div>
                 <div class="col-lg-12 text-center">
                     <div id="success"></div>         
-                    <button type="button" onclick="ControllerCalculaChavePublica()" class="btn btn-default btn-lg">
+                    <button id="button_calcula_chave_publica" type="button" class="btn btn-default btn-lg">
                         <i class="fa fa-unlock-alt fa-fw"></i>
                         <span class="network-name">Calcular Chave Publica</span>
                     </button>     
@@ -152,31 +152,31 @@
           
           <div class="col-lg-6 order-md-2">
               
-            <form id="form_euclides" data-toggle="validator" name="sentMessage">
+            <form id="form_calcula_chave_privada" data-toggle="validator" name="sentMessage">
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                      <label for="input_qq">QQ</label>
-                      <input class="form-control" id="input_qq" name="input_qq" type="number" placeholder="Digite o Valor de QQ *" required="required" data-error="Quase Conseguiu!! Precisa informar o Nome.">
+                      <label for="input_calcula_chave_privada_qq">QQ</label>
+                      <input class="form-control" id="input_calcula_chave_privada_qq" name="input_calcula_chave_privada_qq" type="number" placeholder="Digite o Valor de QQ *" required="required" data-error="Quase Conseguiu!! Precisa informar o Nome.">
                     <div class="help-block with-errors"></div>
                   </div>
                   <div class="form-group">
-                      <label for="input_e">E</label>
-                      <input class="form-control" id="input_e" name="input_e" type="number" placeholder="Digite o Valor de E *" required="required" data-error="Bateu na Trave!! Precisa informar um endereço de Email válido.">
+                      <label for="input_calcula_chave_privada_e">E</label>
+                      <input class="form-control" id="input_calcula_chave_privada_e" name="input_calcula_chave_privada_e" type="number" placeholder="Digite o Valor de E *" required="required" data-error="Bateu na Trave!! Precisa informar um endereço de Email válido.">
                     <div class="help-block with-errors"></div>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="input_d">D</label>
-                    <input class="form-control" id="input_d" name="input_d" type="number" placeholder="Valor de D *" required="required" data-error="Bateu na Trave!! Precisa informar um endereço de Email válido.">
+                    <label for="input_calcula_chave_privada_d">D</label>
+                    <input class="form-control" id="input_calcula_chave_privada_d" name="input_calcula_chave_privada_d" type="number" placeholder="Valor de D *" required="required" data-error="Bateu na Trave!! Precisa informar um endereço de Email válido.">
                     <div class="help-block with-errors"></div>
                   </div>
                 </div>
                 <div class="clearfix"></div>
                 <div class="col-lg-12 text-center">
                     <div id="success"></div>         
-                    <button type="button" onclick="ControllerCalculaD();" class="btn btn-default btn-lg">
+                    <button id="button_calcula_chave_privada" type="button" class="btn btn-default btn-lg">
                         <i class="fa fa-key fa-fw"></i>
                         <span class="network-name">Calcular Chave Privada</span>
                     </button>     
@@ -192,8 +192,8 @@
                 <img class="img-fluid" src="img/chave.png" alt="">
                 <form id="form_chave">
                     <div class="painel painel_chave alert alert-dark position-absolute" role="alert">
-                        N = <input class="painel_input" name="chave_n" value="437"><br>
-                        D = <input class="painel_input" name="chave_d" value="61">
+                        N = <input class="painel_input" name="input_chave_n" value="437"><br>
+                        D = <input class="painel_input" name="input_chave_d" value="61">
                     </div>
                 </form>
               </div>
@@ -274,12 +274,12 @@
               </div>
              </div>
             <div class="col-lg-6 order-lg-1"> 
-            
-                <div class="form-group">
-                    
-                    <textarea class="form-control" id="textarea_mensagem" name="textarea_mensagem" placeholder="Digite a Mensagem que Deseja Enviar *" required="required" data-error="Bateu na Trave!! Precisa informar um endereço de Email válido."></textarea>
-                <div class="help-block with-errors"></div>
-                </div>
+                <form id="form_mensagem">
+                    <div class="form-group">
+                        <textarea class="form-control" id="textarea_mensagem" name="textarea_mensagem" placeholder="Digite a Mensagem que Deseja Enviar *" required="required" data-error="Bateu na Trave!! Precisa informar um endereço de Email válido."></textarea>
+                    <div class="help-block with-errors"></div>
+                    </div>
+                </form>
             </div>
               
             
@@ -302,31 +302,31 @@
                               <div class="col-md-12">
                                   <h6>Chave Pública</h6>
                                   <div class="form-group">
-                                      <input class="form-control" id="input_chave_publica_n" name="input_chave_publica_n" type="number" placeholder="Digite o Valor de N *" required="required" data-error="Quase Conseguiu!! Precisa informar o Nome.">
+                                      <input class="form-control" id="input_cifra_mensagem_n" name="input_cifra_mensagem_n" type="number" placeholder="Digite o Valor de N *" required="required" data-error="Quase Conseguiu!! Precisa informar o Nome.">
                                       <div class="help-block with-errors"></div>
                                   </div>
                                   <div class="form-group">
-                                      <input class="form-control" id="input_chave_publica_e" name="input_chave_publica_e" type="number" placeholder="Digite o Valor de E *" required="required" data-error="Bateu na Trave!! Precisa informar um endereço de Email válido.">
+                                      <input class="form-control" id="input_cifra_mensagem_e" name="input_cifra_mensagem_e" type="number" placeholder="Digite o Valor de E *" required="required" data-error="Bateu na Trave!! Precisa informar um endereço de Email válido.">
                                       <div class="help-block with-errors"></div>
                                   </div>
                               </div>
                             <div class="col-6 text-center">
                                 <div id="success"></div>         
-                                <button id="buttonObterChave" type="button" class="btn btn-default btn-lg">
+                                <button id="button_obter_chave" type="button" class="btn btn-default btn-lg">
                                     <i class="fa fa-download fa-fw"></i>
                                     <span class="network-name">Obter Chave</span>
                                 </button>     
                             </div>  
                             <div class="col-6 text-center">
                                 <div id="success"></div>         
-                                <button id="buttonEnviarChave" type="button" class="btn btn-default btn-lg">
+                                <button id="button_enviar_chave" type="button" class="btn btn-default btn-lg">
                                     <i class="fa fa-upload fa-fw"></i>
                                     <span class="network-name">Enviar Chave</span>
                                 </button>     
                             </div> 
                             <div class="col-12 text-center">
                                 <div></div>         
-                                <button id="buttonCifrarMensagem" type="button" class="btn btn-default btn-lg buttonCifrarMensagem">
+                                <button id="button_cifrar_mensagem" type="button" class="btn btn-default btn-lg buttonCifrarMensagem">
                                     <i class="fa fa-lock fa-fw"></i>
                                     <span class="network-name">Cifrar Mensagem</span>
                                 </button>     
@@ -351,18 +351,18 @@
                               <div class="col-md-12">
                                   <h6>Mensagem Cifrada</h6>
                                   <div class="form-group">
-                                      <textarea class="form-control" id="textareaMensagemCifrada" name="textarea_mensagem_cifrada" placeholder="Insira a Mensagem Cifrada *" required="required" data-error="Bateu na Trave!! Precisa informar um endereço de Email válido."></textarea>
+                                      <textarea class="form-control" id="textarea_mensagem_cifrada" name="textarea_mensagem_cifrada" placeholder="Insira a Mensagem Cifrada *" required="required" data-error="Bateu na Trave!! Precisa informar um endereço de Email válido."></textarea>
                                   </div>
 
                               </div>
                               <div class="col-6 text-center">       
-                                  <button id="buttonObterMensagem" type="button" class="btn btn-default btn-lg">
+                                  <button id="button_obter_mensagem" type="button" class="btn btn-default btn-lg">
                                       <i class="fa fa-download fa-fw"></i>
                                       <span class="network-name">Obter Mensagem</span>
                                   </button>     
                               </div>  
                               <div class="col-6 text-center">       
-                                  <button id="buttonEnviarMensagem" type="button" class="btn btn-default btn-lg">
+                                  <button id="button_enviar_mensagem" type="button" class="btn btn-default btn-lg">
                                       <i class="fa fa-upload fa-fw"></i>
                                       <span class="network-name">Enviar Mensagem</span>
                                   </button>     
@@ -388,18 +388,18 @@
                               <div class="col-md-12">
                                   <h6>Chave Privada</h6>
                                   <div class="form-group">
-                                      <input class="form-control" id="form_decifra_input_chave_privada_n" name="form_decifra_input_chave_privada_n" type="number" placeholder="Digite o Valor de N *" required="required" data-error="Quase Conseguiu!! Precisa informar o Nome.">
+                                      <input class="form-control" id="input_decifra_mensagem_n" name="input_decifra_mensagem_n" type="number" placeholder="Digite o Valor de N *" required="required" data-error="Quase Conseguiu!! Precisa informar o Nome.">
                                       <div class="help-block with-errors"></div>
                                   </div>
                                   <div class="form-group">
-                                      <input class="form-control" id="form_decifra_input_chave_privada_d" name="form_decifra_input_chave_privada_d" type="number" placeholder="Digite o Valor de D *" required="required" data-error="Bateu na Trave!! Precisa informar um endereço de Email válido.">
+                                      <input class="form-control" id="input_decifra_mensagem_d" name="input_decifra_mensagem_d" type="number" placeholder="Digite o Valor de D *" required="required" data-error="Bateu na Trave!! Precisa informar um endereço de Email válido.">
                                       <div class="help-block with-errors"></div>
                                   </div>
                               </div>
 
                               <div class="col-12 text-center">
                                   <div></div>         
-                                  <button id="buttonDecifarMensagem" type="button" class="btn btn-default btn-lg buttonCifrarMensagem">
+                                  <button id="button_decifrar_mensagem" type="button" class="btn btn-default btn-lg buttonCifrarMensagem">
                                       <i class="fa fa-lock fa-fw"></i>
                                       <span class="network-name">Decifrar Mensagem</span>
                                   </button>     
@@ -424,7 +424,7 @@
                               <div class="col-md-12">
                                   <h6>Mensagem Decifrada</h6>
                                   <div class="form-group">
-                                      <textarea class="form-control" id="textareaMensagemDecifrada" name="textarea_mensagem_decifrada" placeholder="Mensagem Decifrada *" required="required" data-error="Bateu na Trave!! Precisa informar um endereço de Email válido."></textarea>
+                                      <textarea class="form-control" id="textarea_mensagem_decifrada" name="textarea_mensagem_decifrada" placeholder="Mensagem Decifrada *" required="required" data-error="Bateu na Trave!! Precisa informar um endereço de Email válido."></textarea>
                                   </div>
 
                               </div>
