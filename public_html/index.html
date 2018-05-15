@@ -171,7 +171,7 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="input_calcula_chave_privada_d">D</label>
-                    <input class="form-control" id="input_calcula_chave_privada_d" name="input_calcula_chave_privada_d" type="number" placeholder="Valor de D *" required="required" data-error="Bateu na Trave!! Precisa informar um endereço de Email válido.">
+                    <input disabled class="form-control" id="input_calcula_chave_privada_d" name="input_calcula_chave_privada_d" type="number" placeholder="Valor de D *" required="required" data-error="Bateu na Trave!! Precisa informar um endereço de Email válido.">
                     <div class="help-block with-errors"></div>
                   </div>
                 </div>
@@ -201,11 +201,11 @@
               </div>
  
           </div>
-            <div class="col-lg-12 order-lg-3 text-center">
+            <div class="col-lg-12 order-lg-3 text-center margin_top">
                 <h5>Algoritmo de Euclides Estendido</h5>
             </div>
           <div class="col-lg-12 order-lg-3">
-              <table class="table">
+              <table id="table_euclides_estendido" class="table">
                   <thead>
                       <tr>
                           <th scope="col">interator</th>
@@ -215,7 +215,8 @@
                           <th scope="col">T</th>
                       </tr>
                   </thead>
-                  <tbody>
+                  <tbody id="tbody_table_euclides_estendido">
+                      <!-- Sera preenchida no JS
                       <tr>
                           <th scope="row">1</th>
                           <td></td>
@@ -244,6 +245,7 @@
                           <td>0 - 2 * 1 = -2</td>
                           <td>1 - 2 * -30 = 61</td>
                       </tr>
+                      -->
                   </tbody>
               </table>
           </div>
@@ -251,10 +253,14 @@
               <div class="painel_pink alert alert-dark center" role="alert">
                     <div class="row text-center">
                         <div class="col-12"><h5>Condição do D no RSA</h5></div>
-                        <div class="col-12">(d * e) mod QQ = 1</div>
-                        <div class="col-12">(61 * 13) mod 396 = 1</div>
-                        <div class="col-12"><hr></div>
-                        <div class="col-12 div_resposta">D = 61</div>
+                        <div id="painel_chave_privada" class="col-12">
+                            <!-- Sera preenchido via JS
+                            <div class="col-12">(d * e) mod QQ = 1</div>
+                            <div class="col-12">(61 * 13) mod 396 = 1</div>
+                            <div class="col-12"><hr></div>
+                            <div class="col-12 div_resposta">D = 61</div>
+                            -->
+                        </div>
                     </div>
               </div>
           </div>

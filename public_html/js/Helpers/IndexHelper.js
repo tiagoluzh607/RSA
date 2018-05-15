@@ -23,7 +23,10 @@ var form_calcula_chave_privada = document.querySelector("#form_calcula_chave_pri
 var input_calcula_chave_privada_qq = form_calcula_chave_privada.input_calcula_chave_privada_qq;
 var input_calcula_chave_privada_d = form_calcula_chave_privada.input_calcula_chave_privada_d;
 var input_calcula_chave_privada_e = form_calcula_chave_privada.input_calcula_chave_privada_e;
-
+var table_euclides_estendido = document.querySelector("#table_euclides_estendido");
+var button_calcula_chave_privada = document.querySelector("#button_calcula_chave_privada");
+var tbody_table_euclides_estendido = document.querySelector("#tbody_table_euclides_estendido");
+var painel_chave_privada = document.querySelector("#painel_chave_privada");
 
 var form_chave = document.querySelector("#form_chave");
 var input_chave_n = form_chave.input_chave_n;
