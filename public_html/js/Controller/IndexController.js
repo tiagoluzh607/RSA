@@ -161,10 +161,36 @@ function PreencheMensagemCifrada(mensagem){
 
 
 
+button_cifrar_mensagem.addEventListener("click", function() {
+
+    
+    var e = input_cifra_mensagem_e.value;
+    var n = input_cifra_mensagem_n.value; 
+    var mensagem =  textarea_mensagem.value;
+    
+    var mensagem_criptografada = CifrarMensagem(mensagem,e,n);
+    
+    //Gatilhos
+    textarea_mensagem_cifrada.value = mensagem_criptografada;
+    
+});
+
+button_decifrar_mensagem.addEventListener("click", function() {
 
 
+    var d = input_decifra_mensagem_d.value;
+    var n = input_decifra_mensagem_n.value;
+    var mensagem_criptografada = textarea_mensagem_cifrada.value;
+    
+    var mensagem = DecifrarMensagem(mensagem_criptografada, d, n);
+    
+    //Gatilhos
+    textarea_mensagem_decifrada.value = mensagem;
+    
 
-//Eventos de Botoes
+});
+
+//Eventos API
 button_obter_chave.addEventListener("click", function() {
 
 
