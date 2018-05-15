@@ -148,23 +148,15 @@ button_calcula_chave_privada.addEventListener("click", function() {
 //################ Sessão Mensagens ###########################################################
 
 
-var form_chave_publica = document.querySelector("#form_chave_publica");
-
-var input_chave_publica_n = form_chave_publica.input_chave_publica_n;
-var input_chave_publica_e = form_chave_publica.input_chave_publica_e;
-
-var textareaMensagemCifrada = document.querySelector("#textareaMensagemCifrada");
-
-
-function PreencheChavePublica(n, e){
+function PreencheFormCifraMensagem(n, e){
     
-    input_chave_publica_n.value = n;
-    input_chave_publica_e.value = e;
+    input_cifra_mensagem_n.value = n;
+    input_cifra_mensagem_e.value = e;
     
 }
 
 function PreencheMensagemCifrada(mensagem){  
-    textareaMensagemCifrada.value = mensagem;  
+    textarea_mensagem_cifrada.value = mensagem;  
 }
 
 
@@ -173,8 +165,7 @@ function PreencheMensagemCifrada(mensagem){
 
 
 //Eventos de Botoes
-var botaoObterChave = document.querySelector("#buttonObterChave");
-botaoObterChave.addEventListener("click", function() {
+button_obter_chave.addEventListener("click", function() {
 
 
     var UrlGet = "http://webapi-tiagoluzh607665881.codeanyapp.com:8080/euclidesapi/chave";
@@ -186,7 +177,7 @@ botaoObterChave.addEventListener("click", function() {
         var resposta = xhr.responseText;
         var chavePublica = JSON.parse(resposta);
         console.log(chavePublica);
-        PreencheChavePublica(chavePublica.n,chavePublica.e);
+        PreencheFormCifraMensagem(chavePublica.n,chavePublica.e);
     };
 
     xhr.onerror = function() {
@@ -199,12 +190,11 @@ botaoObterChave.addEventListener("click", function() {
 
 });
 
-var botaoEnviarChave = document.querySelector("#buttonEnviarChave");
-botaoEnviarChave.addEventListener("click", function() {
+button_enviar_chave.addEventListener("click", function() {
         
         var UrlPost = "http://webapi-tiagoluzh607665881.codeanyapp.com:8080/euclidesapi/chave";
-        var valor_e = input_chave_publica_e.value;
-        var valor_n = input_chave_publica_n.value;
+        var valor_e = input_cifra_mensagem_e.value;
+        var valor_n = input_cifra_mensagem_n.value;
         
         
         var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
@@ -214,8 +204,7 @@ botaoEnviarChave.addEventListener("click", function() {
     
 });
 
-var botaoObterMensagem = document.querySelector("#buttonObterMensagem");
-botaoObterMensagem.addEventListener("click", function() {
+button_obter_mensagem.addEventListener("click", function() {
         
     var UrlGet = "http://webapi-tiagoluzh607665881.codeanyapp.com:8080/euclidesapi/mensagem";
         
@@ -239,12 +228,10 @@ botaoObterMensagem.addEventListener("click", function() {
     
 });
 
-
-var botaoEnviarMensagem = document.querySelector("#buttonEnviarMensagem");
-botaoEnviarMensagem.addEventListener("click", function() {
+button_enviar_mensagem.addEventListener("click", function() {
      
     var UrlPost = "http://webapi-tiagoluzh607665881.codeanyapp.com:8080/euclidesapi/mensagem";
-    var valor_mensagem = textareaMensagemCifrada.value
+    var valor_mensagem = textarea_mensagem_cifrada.value
 
     var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
     xmlhttp.open("POST", UrlPost);
