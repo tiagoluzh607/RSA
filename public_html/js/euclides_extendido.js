@@ -36,7 +36,7 @@ function EuclidesExtendido( qq, e){
     var t = 1; var t_anterior = 0;
     var r = e; var r_anterior = qq;
     
-    while(r != 1) {
+    while(r != 0) {
         
                  
         //Calcula quociente
@@ -61,15 +61,23 @@ function EuclidesExtendido( qq, e){
         console.log("quocinete: "+quociente+" resto: "+r+" valor S: "+s+" valor T: "+t);
     }
     
+    //caso t seja negativo
+    if(t_anterior < 0){
+        t_anterior = t_anterior + t;
+    }
+    
     //retorno somente quem atende a condição (d*e) mod qq = 1
-    if( (t*e)%qq == 1 ){
-        return t;
-    }else if ( (s*e)%qq == 1 ) {
-        return s;
+    if( (t_anterior*e)%qq == 1 ){
+        return t_anterior;
+    }else if ( (s_anterior*e)%qq == 1 ) {
+        return s_anterior;
     }
 
     
 }
+
+
+
 
 function EuclidesExtendidoPreenchendoTabela( qq, e){
     
@@ -84,7 +92,7 @@ function EuclidesExtendidoPreenchendoTabela( qq, e){
     AddRowEuclidesEstendido(tbody_table_euclides_estendido, "1", "", r_anterior, s_anterior, t_anterior);
     AddRowEuclidesEstendido(tbody_table_euclides_estendido, "2", "", r, s, t);
     
-    while(r != 1) {
+    while(r != 0) {
         
                  
         //Calcula quociente
@@ -123,11 +131,16 @@ function EuclidesExtendidoPreenchendoTabela( qq, e){
         contador++;
     }
     
+    //caso t seja negativo
+    if(t_anterior < 0){
+        t_anterior = t_anterior + t;
+    }
+    
     //retorno somente quem atende a condição (d*e) mod qq = 1
-    if( (t*e)%qq == 1 ){
-        return t;
-    }else if ( (s*e)%qq == 1 ) {
-        return s;
+    if( (t_anterior*e)%qq == 1 ){
+        return t_anterior;
+    }else if ( (s_anterior*e)%qq == 1 ) {
+        return s_anterior;
     }
 
     
