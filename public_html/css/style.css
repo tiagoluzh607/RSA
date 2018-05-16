@@ -44,6 +44,14 @@ footer{
 
 /*##### Botoẽs e Formulários ############*/
 
+.with-errors{
+    text-align: center;
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    border-radius: 1ch;
+}
+
 .form-group input, .form-group textarea{
     padding: 15px;
 }
