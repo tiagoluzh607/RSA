@@ -55,3 +55,5 @@ var button_decifrar_mensagem = document.querySelector("#button_decifrar_mensagem
 
 var form_mensagem_decifrada = document.querySelector("#form_mensagem_decifrada");
 var textarea_mensagem_decifrada = form_mensagem_decifrada.textarea_mensagem_decifrada;
+
+

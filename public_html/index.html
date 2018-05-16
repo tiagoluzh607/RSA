@@ -91,17 +91,17 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                      <input class="form-control" id="input_calcula_chave_publica_p" name="input_calcula_chave_publica_p" type="number" placeholder="Digite o Valor de P *" required="required" data-error="Quase Conseguiu!! Precisa informar o Nome.">
+                      <input class="form-control" id="input_calcula_chave_publica_p" data-primo="primo" name="input_calcula_chave_publica_p" type="number" placeholder="Digite o Valor de P *" required="required" >
                     <div class="help-block with-errors"></div>
                   </div>
                   <div class="form-group">
-                      <input class="form-control" id="input_calcula_chave_publica_q" name="input_calcula_chave_publica_q" type="number" placeholder="Digite o Valor de Q *" required="required" data-error="Bateu na Trave!! Precisa informar um endereço de Email válido.">
+                      <input class="form-control" id="input_calcula_chave_publica_q" data-primo="primo" name="input_calcula_chave_publica_q" type="number" placeholder="Digite o Valor de Q *" required="required" data-error="Só pode estar zuando! o Q também precisa ser primo">
                     <div class="help-block with-errors"></div>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                      <input disabled class="form-control" id="input_calcula_chave_publica_e" name="input_calcula_chave_publica_e" type="number" placeholder="Valor de E *" required="required" data-error="Bateu na Trave!! Precisa informar um endereço de Email válido.">
+                      <input disabled class="form-control" id="input_calcula_chave_publica_e" name="input_calcula_chave_publica_e" type="number" placeholder="Valor de E" data-error="Bateu na Trave!! Precisa informar um endereço de Email válido.">
                     <div class="help-block with-errors"></div>
                   </div>
                 </div>
@@ -159,19 +159,19 @@
                 <div class="col-md-6">
                   <div class="form-group">
                       <label for="input_calcula_chave_privada_qq">QQ</label>
-                      <input class="form-control" id="input_calcula_chave_privada_qq" name="input_calcula_chave_privada_qq" type="number" placeholder="Digite o Valor de QQ *" required="required" data-error="Quase Conseguiu!! Precisa informar o Nome.">
+                      <input class="form-control" id="input_calcula_chave_privada_qq" name="input_calcula_chave_privada_qq" type="number" placeholder="Digite o Valor de QQ *" required="required" data-error="Eae Magrão! não vai preencher o QQ?">
                     <div class="help-block with-errors"></div>
                   </div>
                   <div class="form-group">
                       <label for="input_calcula_chave_privada_e">E</label>
-                      <input class="form-control" id="input_calcula_chave_privada_e" name="input_calcula_chave_privada_e" type="number" placeholder="Digite o Valor de E *" required="required" data-error="Bateu na Trave!! Precisa informar um endereço de Email válido.">
+                      <input class="form-control" id="input_calcula_chave_privada_e" name="input_calcula_chave_privada_e" type="number" placeholder="Digite o Valor de E *" required="required" data-primorelativo="primorelativo">
                     <div class="help-block with-errors"></div>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="input_calcula_chave_privada_d">D</label>
-                    <input disabled class="form-control" id="input_calcula_chave_privada_d" name="input_calcula_chave_privada_d" type="number" placeholder="Valor de D *" required="required" data-error="Bateu na Trave!! Precisa informar um endereço de Email válido.">
+                    <input disabled class="form-control" id="input_calcula_chave_privada_d" name="input_calcula_chave_privada_d" type="number" placeholder="Valor de D" data-error="Bateu na Trave!! Precisa informar um endereço de Email válido.">
                     <div class="help-block with-errors"></div>
                   </div>
                 </div>
@@ -488,6 +488,7 @@
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/bootstrap/js/validator.js"></script>
     <script src="vendor/jquery-easing/JsScrollTrigger.js"></script>
 
     <!-- Helper-->
@@ -508,6 +509,7 @@
     <script type="text/javascript" src="js/Service/APIService.js"></script>
     
     <!-- Controlador do html -->
+    <script type="text/javascript" src="js/Validator/IndexValidator.js"></script>
     <script type="text/javascript" src="js/Controller/IndexController.js"></script>
 
 

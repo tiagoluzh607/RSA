@@ -71,6 +71,11 @@ function PreenchePainelCadeado(n,e){
 
 button_calcula_chave_publica.addEventListener("click", function() {
     
+    
+    var ehValido = form_calcula_chave_publica.checkValidity();
+    
+    if(ehValido){
+    
     var p = input_calcula_chave_publica_p.value;
     var q = input_calcula_chave_publica_q.value;
     var n = p * q;
@@ -89,6 +94,10 @@ button_calcula_chave_publica.addEventListener("click", function() {
     input_cifra_mensagem_e.value = e;
     input_decifra_mensagem_n.value = n;
     
+    }else{
+        $('#form_calcula_chave_publica').validator('update');
+        $('#form_calcula_chave_publica').validator('validate');
+    }
 });
 
 
@@ -128,6 +137,10 @@ function PreenchePainelChavePrivada(painel, d, e, qq){
 
 button_calcula_chave_privada.addEventListener("click", function() {
     
+    var ehValido = form_calcula_chave_privada.checkValidity();
+    
+    if(ehValido){
+    
     var e = input_calcula_chave_privada_e.value;
     var qq = input_calcula_chave_privada_qq.value;
     var d = EuclidesExtendidoPreenchendoTabela(qq,e);
@@ -139,6 +152,10 @@ button_calcula_chave_privada.addEventListener("click", function() {
     input_calcula_chave_privada_d.value = d;
     input_chave_d.value = d;
     input_decifra_mensagem_d.value = d;
+    }else{
+        $('#form_calcula_chave_privada').validator('update');
+        $('#form_calcula_chave_privada').validator('validate');
+    }
 });
 
 
